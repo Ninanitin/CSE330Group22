@@ -1,0 +1,9 @@
+#include <linux/kernel.h>
+#include <linux/syscalls.h>
+
+SYSCALL_DEFINE0(identity)
+
+{
+  printk("This is the new system call DoeDoe implemented.\n");
+  return 0;
+}

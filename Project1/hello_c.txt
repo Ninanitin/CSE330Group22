@@ -1,0 +1,20 @@
+// Create your own directory, for example, /home/cse330/test_module/hello.c  
+#include <linux/module.h> 
+#include <linux/kernel.h> 
+ 
+int my_name_init(void){ 
+ printk ("[Group-22][<Nina Kamble, Saatvik Rao, Sasank Chowdary, Shibi Ayynar>]  Hello,  I  am Nina Kamble, a student of CSE330 Fall 2022 \n"); 
+ return 0; 
+} 
+ 
+void my_name_exit(void){
+  
+} 
+  
+/*We need at least two functions in a module, init and exit. Init function is 
+called when the module is loaded (insmod) into the kernel, and exit function 
+is called when the module is removed from the kernel (rmmod).*/ 
+  
+module_init(my_name_init); //defines the hello_init to be called at module load 
+module_exit(my_name_exit); // defines the hello_exit to be called at module unload  
+MODULE_LICENSE("GPL");   // defines license of the module
